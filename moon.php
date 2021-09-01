@@ -1,19 +1,17 @@
 <?php
 date_default_timezone_set('America/Bogota');
 ini_set('default_charset', 'utf-8');
-/*
 
+/*
 Based on the JavaScript
 Lunar Phase Calculator
 by Stephen R. Schmitt
 
 http://home.att.net/~srschmitt/script_moon_phase.html
 which was adapted from a BASIC program from the Astronomical Computing column of Sky & Telescope, April 1994
-
 */
 
-function isdayofmonth($month, $day, $year)
-{
+function isdayofmonth($month, $day, $year){
 
     $dim = array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
     if ($month != 2) {
@@ -35,8 +33,7 @@ function isdayofmonth($month, $day, $year)
 
 }
 
-function isleapyear($year)
-{
+function isleapyear($year){
 
     $a = floor($year - 4 * floor($year / 4));
     $b = floor($year - 100 * floor($year / 100));
@@ -59,16 +56,13 @@ function isleapyear($year)
 
 // compute moon position and phase
 
-function moon_posit($month = null, $day = null, $year = null)
-{
+function moon_posit($month = null, $day = null, $year = null){
 
     $moon = array();
     if (!isdayofmonth($month, $day, $year)) {
-
         $moon['errors'] = 'Invalid date';
 
     } else {
-
         $moon['errors'] = null;
 
         $age = 0.0;// Moon's age in days from New Moon
@@ -93,7 +87,6 @@ function moon_posit($month = null, $day = null, $year = null)
         $MM = $month + 9;
 
         if ($MM >= 12) {
-
             $MM = $MM - 12;
 
         }
@@ -198,7 +191,7 @@ function moon_posit($month = null, $day = null, $year = null)
         if ($longitude > 360)
             $longitude = $longitude - 360;
 
-        $moon['age'] = round($age, 2);
+        $moon['age'] = round($age, 0);
         $moon['distance'] = round($distance, 2);
         $moon['latitude'] = round($latitude, 2);
         $moon['longitude'] = round($longitude, 2);
@@ -213,24 +206,18 @@ function moon_posit($month = null, $day = null, $year = null)
 
 // normalize values to range 0...1
 
-function normalize($v)
-{
-
+function normalize($v){
     $v = $v - floor($v);
-
     if ($v < 0) {
         $v++;
     }
-
     return $v;
 }
-
 
 $date = time();
 $year = date('Y', $date);
 $month = date('n', $date);
 $day = date('j', $date);
-
 $moon = moon_posit($month, $day, $year);
 
 echo json_encode($moon);

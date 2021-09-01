@@ -11,16 +11,25 @@ if (isset($_GET['date'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>La Luna y Las Maticas</title>
+
     <meta name="description" content="La luna, sus fases y que trabajos se recomiendan hacer a nuestras maticas!"/>
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="Fases, lunas, bonsai, maticas, trabajos, abono, poda, sustrato, foliar, Maticas, Abono, Sustrato,Foliar,
-Esquejes,
-Semillas,
-Siembra,
-Acodo,
-injerto,
-Trasplante, Poda"/>
+    <meta name="keywords"
+          content="Fases, lunas, bonsai, maticas, trabajos, abono, poda, sustrato, foliar, Maticas, Abono, Sustrato,Foliar, Esquejes, Semillas, Siembra, Acodo, injerto, Trasplante, Poda"/>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="La Luna y las Maticas"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content=" https://luna.xinergialab.com/"/>
+    <meta property="og:image" content=" https://luna.xinergialab.com/images/lunallena.svg"/>
+    <meta property="og:description"
+          content="La luna, sus fases y que trabajos se recomiendan hacer a nuestras maticas!"/>
+
     <meta name="author" content="CarlosPinedaT"/>
     <meta name="copyright" content="CarlosPinedaT"/>
     <meta http-equiv="cache-control" content="no-cache"/>
@@ -81,14 +90,14 @@ Trasplante, Poda"/>
             <div class="col text-center">
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-dark"><h4>Datos</h4></li>
-                    <li class="list-group-item">Distancia Luna : <strong id="txtDistancia"></strong> Km</li>
-                    <li class="list-group-item">Edad : <strong id="txtEdad"></strong></li>
+                    <li class="list-group-item">Distancia : <strong id="txtDistancia"></strong> Km</li>
+                    <li class="list-group-item">Edad : <strong id="txtEdad"></strong> dias</li>
                     <li class="list-group-item">Signo Zodiaco : <strong id="txtZodiaco"></strong></li>
                 </ul>
             </div>
             <div class="col-3 text-center">
                 <img id="img" src="" class="img-fluid">
-                <h6 id="fase"></h6>
+                <h6 id="fase" style="text-transform: capitalize;font-weight: bold;"></h6>
             </div>
             <div class="col text-center">
                 <ul class="list-group">
@@ -110,11 +119,11 @@ Trasplante, Poda"/>
         <div class="row justify-content-md-center">
             <div id="extra" class=" col alert alert-success text-center col-md-4" role="alert">
                 <strong>Fase lunar óptima para :</strong>
-                <ul style="font-size: small">
-                    <li>Yamadori</li>
-                    <li>Trasplante</li>
-                    <li>Corte Drastico</li>
-                </ul>
+                <div style="font-size: small">
+                    Yamadori
+                    <br>Trasplante
+                    <br>Corte Drastico
+                </div>
             </div>
         </div>
     </div>
